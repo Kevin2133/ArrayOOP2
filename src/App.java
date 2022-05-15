@@ -16,6 +16,17 @@ public class App{
 
      */
 
+    static int trovaCitta (Orario[] o, String citta, int cont){
+        citta = citta.toLowerCase();
+        for(int i = 0; i < cont; i++){
+            if(o[i].citta.toLowerCase().equals(citta)){
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
     public static void main(String[] args) throws Exception{
         int scelta;
         Orario[] orari = new Orario[1000];
@@ -27,7 +38,7 @@ public class App{
             System.out.println("0. esci");
             System.out.println("1. Inserisci orario");
             System.out.println("2. visualizzare orari");
-            System.out.println("3. visualizzare orari (no asttributo solare)");
+            System.out.println("3. visualizzare orari (no attributo solare)");
             System.out.println("4. orario di una citta' in input");
 
             scelta = scanner.nextInt();
@@ -66,10 +77,33 @@ public class App{
                     }                    
                     break;
                 case 3:
-
+                    if(cont > 0){
+                        for(int i = 0; i < cont; i++){
+                            System.out.println("************");
+                            System.out.println("Citta= " + orari[i].citta);
+                            System.out.println("Ora= " + orari[i].ore + ":" + orari[i].minuti + ":" + orari[i].secondi);
+                            System.out.println("************");
+                        }
+                    }else{
+                        System.out.println("Non ci sono elementi nell'array");
+                    }
                     break;
                 case 4:
+                    if(cont > 0){
+                        int ind;
 
+                        System.out.println("Inserisci la citta da cercare");
+                        citta = scanner.nextLine();
+
+                        ind = trovaCitta(orari, citta, cont);
+                        if(ind > -1){
+                            orari[ind].visualizza();
+                        }else{
+                            System.out.println("La citta' cercata non e' presente nell'array");
+                        }
+                    }else{
+                        System.out.println("Non ci sono elementi nell'array");
+                    }
                     break;
                 default:
                 System.out.println("Scelta non prevista");
