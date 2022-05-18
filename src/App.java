@@ -181,8 +181,10 @@ public class App {
                             }
                         }
 
-                        if (k > 1) {
+                        if (k < 1) {
                             System.out.println("La nazione inserita non e' presente nell'array");
+                        }else{
+                            System.out.println("Numero di fusi orari= " + k);
                         }
 
                     } else {
