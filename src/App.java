@@ -29,10 +29,14 @@ public class App {
     }
 
     static void ordina(Orario[] o, int cont) {
+
         for (int i = 0; i < cont; i++) {
             for (int k = i + 1; k < cont; k++) {
                 if (o[i].ore > o[k].ore) {
+                    Orario temp = o[i];
                     o[i] = o[k];
+                    o[k] = temp;
+                    
                 }
             }
         }
