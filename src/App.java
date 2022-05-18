@@ -31,7 +31,7 @@ public class App{
         int scelta;
         Orario[] orari = new Orario[1000];
         int cont = 0, ore, minuti, secondi;
-        String citta;
+        String citta, nazione;
         Scanner scanner = new Scanner(System.in);
 
         do{
@@ -51,6 +51,8 @@ public class App{
                     if(cont < 1000){
                         System.out.println("Inserisci nome citta");
                         citta = scanner.nextLine();
+                        System.out.println("Inserisci Nazione");
+                        nazione = scanner.nextLine();
                         System.out.println("Inserisci ore");
                         ore = scanner.nextInt();
                         scanner.nextLine();
@@ -61,7 +63,7 @@ public class App{
                         secondi = scanner.nextInt();
                         scanner.nextLine();
 
-                        orari[cont] = new Orario(citta, ore, minuti, secondi);
+                        orari[cont] = new Orario(citta, nazione, ore, minuti, secondi);
                         cont++;
                     }else{
                         System.out.println("L'array e' pieno");
@@ -81,6 +83,7 @@ public class App{
                         for(int i = 0; i < cont; i++){
                             System.out.println("************");
                             System.out.println("Citta= " + orari[i].citta);
+                            System.out.println("Nazione= " + orari[i].nazione);
                             System.out.println("Ora= " + orari[i].ore + ":" + orari[i].minuti + ":" + orari[i].secondi);
                             System.out.println("************");
                         }
