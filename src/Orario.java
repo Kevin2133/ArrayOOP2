@@ -44,6 +44,7 @@ public class Orario{
 
     void visualizza (){
         System.out.println("Citta= " + this.citta);
+        System.out.println("Nazione= " + this.nazione);
         System.out.println("Orario= " + this.ore + ":" + this.minuti + ":" + this.secondi);
         System.out.println("Solare= " + this.solare);
     }
