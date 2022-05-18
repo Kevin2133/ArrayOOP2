@@ -11,15 +11,16 @@ public class Orario{
      */
 
 
-    String citta;
+    String citta, nazione;
     int ore, minuti, secondi;
     boolean solare;
 
-    public Orario (String citta, int ore, int minuti, int secondi){
+    public Orario (String citta, String nazione, int ore, int minuti, int secondi){
         this.citta = citta;
         this.ore = ore;
         this.minuti = minuti;
         this.secondi = secondi;
+        this.nazione = nazione;
         this.solare =  true;
     }
 
