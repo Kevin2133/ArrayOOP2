@@ -58,6 +58,7 @@ public class App {
             System.out.println("5. Impostare ora solare per citta presa in input");
             System.out.println("6. Impostare ora legale per citta presa in input");
             System.out.println("7. Numero di fusi orari per nazione in input");
+            System.out.println("8. Nazione in input e conto quante citta ci sono");
 
             scelta = scanner.nextInt();
             scanner.nextLine();
@@ -192,6 +193,28 @@ public class App {
                         }
 
                     } else {
+                        System.out.println("Non ci sono elementi nell'array");
+                    }
+                    break;
+                case 8:
+                    if(cont > 0){
+                        int k = 0;
+
+                        System.out.println("inserisci la nazione da cercare");
+                        nazione = scanner.nextLine();
+
+                        for(int i = 0; i < cont; i++){
+                            if(orari[i].nazione.equals(nazione)){
+                                k++;
+                            }
+                        }
+
+                        if(k > 0){
+                            System.out.println("Nazione= " + nazione + ", citta= " + k);
+                        }else{
+                            System.out.println("La nazione inserita non e' presente nell'array");
+                        }
+                    }else{
                         System.out.println("Non ci sono elementi nell'array");
                     }
                     break;
